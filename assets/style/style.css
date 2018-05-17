@@ -62,8 +62,18 @@ img {
 }
 
 .container {
-	background-color: grey;
+	background-color: rgba(255, 255, 255, 0.2);
 	width: 700px;
-	height: 200px;
+	height: 100vh;
 	margin: 0 auto;
+	margin-top: 50px;
+}
+.modal {
+	width: 200px;
+	height: 500px;
+}
+input {
+	border-radius: 30px;
+	text-decoration: none;
+	border-color: black;
 }
