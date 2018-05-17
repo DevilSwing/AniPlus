@@ -68,6 +68,13 @@ img {
 	margin: 0 auto;
 	margin-top: 50px;
 }
+
+button {
+	color: yellow;
+	background-color: black;
+	border-radius: 50px;
+	padding: 40px;
+}
 .modal {
 	width: 200px;
 	height: 500px;
