@@ -5,6 +5,7 @@ body {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position-x: center;
+	font-family: "Trebuchet MS";
 }
 
 * {
@@ -83,4 +84,58 @@ input {
 	border-radius: 30px;
 	text-decoration: none;
 	border-color: black;
+}
+
+
+.anime-list {
+	width: 100%;
+	padding-top: 30px;
+}
+.anime-preview {
+	background-color: white;
+	margin: 30px;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+
+}
+.anime-preview__right {
+	margin-left: 10px;
+	width: calc(70% - 10px);
+}
+.anime-preview__left {
+	margin-right: 10px;
+	width: 30%;
+	height: 280px;
+}
+.anime-preview__left img {
+	margin: 0 auto;
+
+}
+.anime-preview__right div {
+	margin-bottom: 10px;
+	padding-top: 15px;
+}
+.anime-preview__title{
+	font-weight: 900;
+	font-size: 20px;
+	text-decoration: underline;
+}
+
+.anime-preview__genre{
+	font-size: 14px;
+	text-decoration: underline;
+}
+
+.anime-preview__airings_tatus{
+	font-size: 14px;
+	text-decoration: underline;
+}
+
+.anime-preview__total_episodes{
+	font-size: 14px;
+	text-decoration: underline;
+}
+.anime-preview span {
+	font-weight: 900;
 }
