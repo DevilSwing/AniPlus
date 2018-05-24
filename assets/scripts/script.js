@@ -4,6 +4,8 @@ $(document).ready(function(){
 	const client_id = 'grenka-ynakp';
 	let access_token = '';
 
+	const animeListBlock = $('.anime-list');
+
 
 	const params = {
 		grant_type    : "client_credentials",
@@ -17,10 +19,10 @@ $(document).ready(function(){
 
 	function getAniList (){
 		$.get('https://anilist.co/api/browse/anime?access_token=' + access_token, function(result){
-			console.log(result);
+			showAnimeList(result);
 		});
 
-		showAnimeList(result);
+		
 			
 	}
 	
@@ -29,11 +31,27 @@ $(document).ready(function(){
 	})
 
 	function showAnimeList(animeList) {
-			// цикл, который проходит по полученному массиву и закидывает верстку в анимелист - в каччестве верстки он получает строку с подставленными данными из метода ниже
+		for (var i = 0; i < animeList.length; i++) {
+			animeListBlock.append(getAnimePreview(animeList[i]));
+		}
 	}
 
 	function getAnimePreview(anime) {
-		return '<div class="anime-preview"><div class="anime-preview__left"><img  src="' + anime.title + '"></div><div class="anime-preview__right"><div class="anime-preview__title">Cowboy Bebop: Knockin\' on Heaven\'s Door/Cowboy Bebop: Tengoku no Tobira</div><div class="anime-preview__genres"><span>Genres</span>:Action, Adventure, Comedy, Drama, Sci-Fi</div><div class="anime-preview__airing_status"><span>Airing Status</span>: finished airing</div><div class="anime-preview__total_episodes"><span>Episodes</span>: 26</div></div></div>';
+		return '<div class="anime-preview"><div class="anime-preview__left"><img  src="' + anime.image_url_lge + '"></div><div class="anime-preview__right"><div class="anime-preview__title">' + anime.title_romaji + '</div><div class="anime-preview__genres"><span>Genres</span>' + getGenres(anime.genres) + '</div><div class="anime-preview__airing_status"><span>Airing Status</span>: ' + anime.airing_status + '</div><div class="anime-preview__total_episodes"><span>Episodes</span>: ' + anime.total_episodes + '</div></div></div>';
+	}
+
+	function getGenres(genres) {
+		var result = "";
+
+		for (var i = 0; i < genres.length; i++) {
+		 	if (genres.length - i > 1) {
+		 		result += genres[i] + ', ';
+		 	} else {
+		 		result += genres[i];
+		 	}
+		}
+
+		return result;
 	}
 
 });
