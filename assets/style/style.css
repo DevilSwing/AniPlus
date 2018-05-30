@@ -6,7 +6,12 @@ body {
 	background-size: cover;
 	background-position-x: center;
 	font-family: "Trebuchet MS";
+	cursor: url("../images/cursor.png"), auto;
+
 }
+/*.link:hover {
+	cursor: url(../images/cursor.png), auto;
+}*/
 
 section {
 	padding-top: 10px;
@@ -92,9 +97,11 @@ input {
 
 
 .anime-list {
+padding: 30px;
 	width: 100%;
 	height: calc(100vh - 70px);
 	overflow: hidden;
+	border-radius: 220px;
 }
 .anime-preview {
 	background-color: white;
@@ -103,11 +110,15 @@ input {
 	min-height: 280px;
 	max-height: 280px;
 	transition: .3s ease-out;
+	border-radius: 20px;
+	background: linear-gradient(to top left, green, blue);
+
 }
 
 .anime-preview.-open {
-	min-height: 480px;
-	max-height: 480px;
+	min-height: 880px;
+	max-height: 880px;
+	background: linear-gradient(to top left, red, yellow);
 }
 
 .anime-preview__wraped {
@@ -124,7 +135,13 @@ input {
 
 .anime-preview__unwraped {
 	background-color: white;
-	height: 200px;
+	height: 0px;
+}
+.anime-preview__extra {
+	padding-left: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 	
 }
 
@@ -137,11 +154,33 @@ input {
 	width: 30%;
 	height: 280px;
 }
+
+.anime-preview__right_2 {
+	margin-left: 10px;
+	width: calc(70% - 10px);
+}
+
+.anime-preview__left_2 {
+		margin-right: 10px;
+	width: calc(70% - 10px);
+}
+.anime-preview__right_2 div{
+		font-size: 30px;
+	margin-bottom: 10px;
+	padding-top: 15px;
+}
+.anime-preview__left_2 div{
+		font-size: 30px;
+	margin-bottom: 10px;
+	padding-top: 15px;
+}
+
 .anime-preview__left img {
 	margin: 0 auto;
 
 }
 .anime-preview__right div {
+	font-size: 25px;
 	margin-bottom: 10px;
 	padding-top: 15px;
 }
@@ -193,4 +232,8 @@ input {
 	transition: .4s;
 
 }
-
+p {
+	font-weight: 900px;
+	font-size: 30px;
+	text-align: center;
+}

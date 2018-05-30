@@ -3,7 +3,6 @@ $(document).ready(function(){
 	const client_secret = 'F6wh6xdtLeyH1KksLmIA';
 	const client_id = 'grenka-ynakp';
 	let access_token = '';
-	const listOfAnime = [];
 
 	const animeListBlock = $('.anime-list');
 
@@ -16,13 +15,14 @@ $(document).ready(function(){
 
 	$.post('https://anilist.co/api/auth/access_token', params, function(result){
 		access_token = result.access_token;
+		console.log(result);
 
 		getAniList();
 	});
 
 	function getAniList (){
 		$.get('https://anilist.co/api/browse/anime?access_token=' + access_token, function(result){
-			console.log(result);
+			
 			showAnimeList(result);
 		});		
 	}
@@ -43,7 +43,7 @@ $(document).ready(function(){
 	}
 
 	function getAnimeExtra(anime) {
-		return '<div class="anime-preview__unwraped"></div></div>';
+		return '<div class="anime-preview__unwraped"><p>БОЛЬШЕ ИНФЫ^-^</p><div class="anime-preview__extra"><div class="anime-preview__left_2"><div class="anime-preview__format"><span>Format</span>:' + anime.series_type + '</div><div class="anime-preview__status"><span>Status</span>:' + anime.season + '</div><div class="anime-preview__start-date"><span>Start Date</span>:' + anime.start_date_fuzzy + '</div><div class="anime-preview__average-score"><span>Average Score</span>:' + anime.average_score + '</div></div><div class="anime-preview__right_2"><div class="anime-preview__mean-score"><span>Mean Score</span>:' + anime.updated_at + '</div><div class="anime-preview__popularity"><span>Popularity</span>:' + anime.popularity + '</div><div class="anime-preview__favorites"><span>Favourites</span>:' + anime.adult + '</div><div class="anime-preview__end_date_fuzzy"><span>End date</span>:' + anime.end_date_fuzzy + '</div></div></div></div>';
 	}
 
 	function getGenres(genres) {
