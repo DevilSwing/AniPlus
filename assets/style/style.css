@@ -5,8 +5,8 @@ body {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position-x: center;
-	font-family: "Trebuchet MS";
-	cursor: url("../images/cursor.png"), auto;
+	font-family: "Roboto Slab";
+	cursor: url(../images/cursor.png), auto;
 
 }
 /*.link:hover {
@@ -20,6 +20,8 @@ section {
 * {
 	box-sizing: border-box;
 }
+
+
 header {
 	display: flex;
 	align-items: center;
@@ -30,6 +32,10 @@ header {
 	height: 60px;
 	padding: 0 15px;
 	background-color: rgba(255, 255, 255, 0.2);
+}
+span  {
+	font-family: 'Roboto Slab', arial;
+	font-size: 22px;
 }
 
 .header_controls {
@@ -49,6 +55,10 @@ header {
 img {
 	max-height: 100%;
 	max-width: 100%;
+}
+.logo {
+	width: 40px;
+	height: 40px;
 }
 
 .header_logo {
@@ -82,8 +92,8 @@ img {
 .container button {
 	color: yellow;
 	background-color: black;
-	padding: 5px 37px;
-	margin: 0;
+	padding: 10px 37px;
+	margin: 14px;
 }
 .modal {
 	width: 200px;
@@ -111,13 +121,13 @@ padding: 30px;
 	max-height: 280px;
 	transition: .3s ease-out;
 	border-radius: 20px;
-	background: linear-gradient(to top left, green, blue);
+	background: linear-gradient(to top left, #F984E5, #00FF7F);
 
 }
 
 .anime-preview.-open {
-	min-height: 880px;
-	max-height: 880px;
+	min-height: 666px;
+	max-height: 666px;
 	background: linear-gradient(to top left, red, yellow);
 }
 
@@ -140,8 +150,9 @@ padding: 30px;
 .anime-preview__extra {
 	padding-left: 20px;
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	justify-content: space-between;
+
 	
 }
 
@@ -165,11 +176,13 @@ padding: 30px;
 	width: calc(70% - 10px);
 }
 .anime-preview__right_2 div{
+	  font-family: 'Roboto Slab Regular', arial;
 		font-size: 30px;
 	margin-bottom: 10px;
 	padding-top: 15px;
 }
 .anime-preview__left_2 div{
+	  font-family: 'Roboto Slab Regular', arial;
 		font-size: 30px;
 	margin-bottom: 10px;
 	padding-top: 15px;
@@ -180,6 +193,7 @@ padding: 30px;
 
 }
 .anime-preview__right div {
+	  font-family: 'Roboto Slab Regular', arial;
 	font-size: 25px;
 	margin-bottom: 10px;
 	padding-top: 15px;
@@ -205,6 +219,7 @@ padding: 30px;
 	text-decoration: underline;
 }
 .anime-preview span {
+	  font-family: 'Roboto Slab Regular', arial;
 	font-weight: 900;
 }
 .anime-list {
